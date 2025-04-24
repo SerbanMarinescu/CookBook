@@ -63,6 +63,9 @@ dependencies {
     // Coil
     implementation(libs.coil.compose)
 
+    // Icons Extended
+    implementation(libs.androidx.material.icons.extended)
+
     // Compose Navigation
     implementation(libs.androidx.navigation.compose)
 
