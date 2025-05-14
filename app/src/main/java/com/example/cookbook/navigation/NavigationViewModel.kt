@@ -11,6 +11,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.ShoppingBasket
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.cookbook.navigation.util.MenuItem
@@ -40,10 +41,17 @@ class NavigationViewModel: ViewModel() {
         )
     )
 
+    var isCreatingRecipe by mutableStateOf(false)
+        private set
+
     var selectedIndex by mutableIntStateOf(0)
         private set
 
     fun onSelectedItem(index: Int) {
         selectedIndex = index
+    }
+
+    fun toggleRecipeCreatingDialog() {
+        isCreatingRecipe = !isCreatingRecipe
     }
 }
